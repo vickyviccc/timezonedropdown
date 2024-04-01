@@ -4,6 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Timezone dropdown</title>
+    <style>
+      select {
+        padding: 10px 10px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <select name="city" id="cities">
+      <option value="">Select a city</option>
+      <option value="toronto">Toronto</option>
+      <option value="vienna">Vienna</option>
+      <option value="natal">Natal</option>
+    </select>
+
+    <script>
+      function showSelectedCity(event) {
+        if (event.target.value.length > 0) {
+          if (event.target.value === "toronto") {
+            alert("northamerica");
+          }
+          if (event.target.value === "vienna") {
+            alert("Hallo");
+          }
+          if (event.target.value === "natal") {
+            alert("Olá");
+          }
+        }
+      }
+
+      let citiesSelect = document.querySelector("#cities");
+
+      console.log(citiesSelect.value);
+
+      citiesSelect.addEventListener("change", showSelectedCity);
+    </script>
+  </body>
 </html>
