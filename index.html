@@ -15,31 +15,20 @@
   <body>
     <select name="city" id="cities">
       <option value="">Select a city</option>
-      <option value="toronto">Toronto</option>
-      <option value="vienna">Vienna</option>
-      <option value="natal">Natal</option>
+      <option value="America/Toronto">Toronto 🇨🇦</option>
+      <option value="Europe/Vienna">Vienna 🇦🇹</option>
+      <option value="America/Bahia">Natal 🇧🇷</option>
     </select>
 
     <script>
-      function showSelectedCity(event) {
-        if (event.target.value.length > 0) {
-          if (event.target.value === "toronto") {
-            alert("northamerica");
-          }
-          if (event.target.value === "vienna") {
-            alert("Hallo");
-          }
-          if (event.target.value === "natal") {
-            alert("Olá");
-          }
-        }
+      function showDate(event) {
+        let currentTime = moment().format("dddd, MMMM D, YYYY, h:m A");
+        alert("It is ${currentTime} in ${event.target.value}");
       }
 
       let citiesSelect = document.querySelector("#cities");
 
-      console.log(citiesSelect.value);
-
-      citiesSelect.addEventListener("change", showSelectedCity);
+      citiesSelect.addEventListener("change", showDate);
     </script>
   </body>
 </html>
